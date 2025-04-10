@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/supermercados_globales
+    username: "root"
+    password: "0000"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+springdoc:
+  show-actuator: true
