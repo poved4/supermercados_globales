@@ -25,6 +25,13 @@ public class ApiExceptionHandler {
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ResponseEntity<?> handleException(IllegalArgumentException e) {
+    return new ResponseEntity<>(
+        Map.of("error", e.getMessage()),
+        HttpStatus.BAD_REQUEST);
+  }
+
   @ExceptionHandler(BadRequestException.class)
   public ResponseEntity<?> handleException(BadRequestException e) {
     return new ResponseEntity<>(
